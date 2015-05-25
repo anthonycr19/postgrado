@@ -14,8 +14,12 @@ class NotasTable extends Migration {
 	{
 		Schema::create('nota', function(Blueprint $table)
 		{
-			$table->increments('id');
-			$table->timestamps();
+			$table->increments('id_Notas');
+			$table->decimal('parcial',2,2);
+                        $table->decimal('final',2,2);
+                        $table->decimal('proyecto',2,2);
+                        $table->decimal('practica1',2,2);
+                        $table->decimal('practica2',2,2);
 		});
 	}
 
