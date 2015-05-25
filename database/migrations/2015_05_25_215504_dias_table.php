@@ -17,7 +17,7 @@ class DiasTable extends Migration {
 			$table->increments('idDias');
                         $table->time("horainicio");
                         $table->time("horafinal");
-                        $table->num("Dias",["Lunes","Martes","Miercoles","Jueves","Viernes","Sabado"]);
+                        $table->enum("Dias",["Lunes","Martes","Miercoles","Jueves","Viernes","Sabado"]);
 		});
 	}
 

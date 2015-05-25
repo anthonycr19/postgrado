@@ -15,8 +15,8 @@ class HorarioTable extends Migration {
 		Schema::create('horario', function(Blueprint $table)
 		{
 			$table->increments('id_horario');
-			$table->interger('id_profile');
-                        $table->interger('id_dias')->unsigned();
+			$table->integer('id_profile');
+                        $table->integer('id_dias')->unsigned();
                         $table->foreign('id_dias')
                                 ->references('idDias')->on('dias')
                                 ->onDelete('cascade');

@@ -16,8 +16,8 @@ class CursoTable extends Migration {
 		{
 			$table->increments('idCurso');
                         $table->string('nombre',20)->unique();
-                        $table->string('idcategoria')->unsigned();
-                        $table->string('idmodulo')->unsigned();
+                        $table->integer('idcategoria')->unsigned();
+                        $table->integer('idmodulo')->unsigned();
                         $table->foreign('idcategoria')
                                 ->references('id_detalle')->on('detalle')
                                 ->onDelete('cascade');

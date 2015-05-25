@@ -15,8 +15,8 @@ class DispHorariaTable extends Migration {
 		Schema::create('DispHorario', function(Blueprint $table)
 		{
 			$table->increments('id_disp_horaria');
-			$table->interger('id_profile');
-                        $table->interger('id_dias')->unsigned();
+			$table->integer('id_profile');
+                        $table->integer('id_dias')->unsigned();
                         $table->foreign('id_dias')
                                 ->references('idDiasD')->on('DiasDisponibles')
                                 ->onDelete('cascade');
