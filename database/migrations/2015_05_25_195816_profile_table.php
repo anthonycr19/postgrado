@@ -26,7 +26,7 @@ class ProfileTable extends Migration {
                         $table->string('direccion',50)->nullable();
                         $table->enum('activo',['si','no']);
                         $table->integer('id_detalle')->unsigned();
-                        $table->integer('id_user')->unsigned();
+                        $table->integer('id_user')->unsigned()->unique();
                         $table->foreign("id_user")
                                 ->references("id_user")->on("users")
                                 ->onDelete("cascade");
