@@ -15,6 +15,14 @@ class CursoGrupoTable extends Migration {
 		Schema::create('CursoGrupo', function(Blueprint $table)
 		{
 			$table->increments('idCursoGrupo');
+                        $table->integer('idCurso')->unsigned();
+                        $table->integer('idHorario')->unsigned();
+                        $table->foreign('idCurso')
+                                ->references('idCurso')->on('curso')
+                                ->onDelete("cascade");
+                        $table->foreign('idHorario')
+                                ->references('id_horario')->on('horario')
+                                ->onDelete("cascade");
 		});
 	}
 
