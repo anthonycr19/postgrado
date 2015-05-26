@@ -16,10 +16,8 @@ class MatriculaTable extends Migration {
 		{
 			$table->integer('idprofile')->unsigned();
                         $table->integer('idCursoGrupo')->unsigned();
-                        $table->integer('idNotas')->unsigned();
-                        $table->integer('idperiodo')->unsigned();
-                        
-                        $table->primary(['idprofile','idCursoGrupo','idperiodo']);
+                        $table->integer('idNotas')->unsigned();                        
+                        $table->primary(['idprofile','idCursoGrupo']);
                         $table->foreign('idprofile')
                                 ->references('id_profile')->on('profile')
                                 ->onDelete('cascade');
@@ -28,9 +26,6 @@ class MatriculaTable extends Migration {
                                 ->onDelete('cascade');
                         $table->foreign('idNotas')
                                 ->references('id_Notas')->on('nota')
-                                ->onDelete('cascade');
-                        $table->foreign('idperiodo')
-                                ->references('idperiodo')->on('periodo')
                                 ->onDelete('cascade');
 		});
 	}
