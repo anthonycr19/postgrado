@@ -17,12 +17,17 @@ class CursoGrupoTable extends Migration {
 			$table->increments('idCursoGrupo');
                         $table->integer('idCurso')->unsigned();
                         $table->integer('idHorario')->unsigned();
+                        $table->integer('idperiodo')->unsigned();
+                        
                         $table->foreign('idCurso')
                                 ->references('idCurso')->on('curso')
                                 ->onDelete("cascade");
                         $table->foreign('idHorario')
                                 ->references('id_horario')->on('horario')
                                 ->onDelete("cascade");
+                        $table->foreign('idperiodo')
+                                ->references('idperiodo')->on('periodo')
+                                ->onDelete('cascade');
 		});
 	}
 
