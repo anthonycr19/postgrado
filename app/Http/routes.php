@@ -19,6 +19,11 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
-Route::group(['prefix'=>'admin'],function(){
+/**Route::group(['prefix'=>'admin'],function(){
    Route:resource('user','UserController'); 
+});*/
+#Ruta para secretaria
+Route::group(['prefix'=>'secretaria','namespace' => 'Secretaria'],function(){
+		
+		Route::resource('alumno','AlumnoController');
 });
