@@ -31,7 +31,7 @@ class UserProfileTableSeeder extends Seeder {
 				'correo' => $faker->unique()->email,
 				'fechadeNacimiento' => $faker->date,
 				'celular' => $faker->unique()->numberBetween(100000000,999999999),
-				'direccion' => 'Av. Heroes de San Juan A 21',
+				'direccion' => $faker->address,
 				'activo' => 'si',
 				'id_user' => $id,
 				'id_detalle' => $faker->numberBetween(1,10)
